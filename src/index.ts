@@ -14,10 +14,42 @@
  * Let's get started!
  * **/
 
-const message: string = "Hello, TypeScript with Node.js!";
 
-function sayHello(msg: string): void {
-    console.log(msg);
+
+/**
+ * Exercise: fetch todos from JSONPlaceholder, filter completed ones,
+ * and log the number and titles. Handle network errors and bad responses.
+ */
+
+type Todo = {
+    userId: number;
+    id: number;
+    title: string;
+    completed: boolean;
+};
+
+async function fetchAndFilterTodos(): Promise<void> {
+    const url = 'https://jsonplaceholder.typicode.com/todos';
+
+    try {
+        // Use globalThis.fetch to avoid TypeScript DOM typings issues in Node environments
+        const resp = await (globalThis as any).fetch(url);
+
+        if (!resp.ok) {
+            console.log('Network response was not ok');
+            return;
+        }
+
+        const todos: Todo[] = await resp.json();
+
+        const completed = todos.filter((t) => t.completed === true);
+
+        console.log(`Number of completed tasks: ${completed.length}`);
+        console.log('Titles of completed tasks:', completed.map((t) => t.title));
+    } catch (err) {
+        console.error('Fetch error:', (err as Error).message);
+    }
 }
 
-sayHello(message);
+// Run the function when this file is executed
+fetchAndFilterTodos();

@@ -1,18 +1,16 @@
 {
   "compilerOptions": {
-    // --- Configuration de base ---
-    "target": "ES2020", // Version de JavaScript cible. ES2020 est un bon standard moderne.
-    "module": "commonjs", // Le système de modules utilisé par Node.js. C'est essentiel.
-    "strict": true, // Active toutes les vérifications de types strictes. Fortement recommandé.
-    "esModuleInterop": true, // Permet une meilleure interopérabilité entre les modules CommonJS et ES.
-    // --- Structure du projet ---
-    "rootDir": "./src", // Spécifie le dossier racine des fichiers source TypeScript.
-    "outDir": "./dist", // Spécifie le dossier où sera généré le JavaScript compilé.
-    // --- Fiabilité ---
-    "forceConsistentCasingInFileNames": true, // Évite les problèmes de casse entre les systèmes de fichiers.
-    "skipLibCheck": true // Accélère la compilation en ne vérifiant pas les types des fichiers de déclaration (.d.ts).
+    "target": "ES2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }

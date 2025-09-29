@@ -1,7 +1,7 @@
 # Week 1: Introduction & Modern JavaScript Fundamentals
 
 Welcome to the first week of our course on mobile development with React Native! This week, we are laying the essential groundwork by ensuring everyone is comfortable with modern JavaScript features. These concepts are crucial, as React and React Native use them extensively.
-
+i
 ## Weekly Objectives
 
 - **Master** key JavaScript ES6+ features (arrow functions, destructuring, `map`, `filter`, `reduce`).
